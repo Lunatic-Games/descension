@@ -1,5 +1,5 @@
 # Descension
-A turn-based tactical roguelike set in Hell.
+A turn-based tactical roguelike set in Hell. Featuring uniques classes, punishing curses, and deadly foes.
 
 ## Lunatic Games naming conventions
 ### Project folder
