@@ -27,3 +27,10 @@ texture_click_mask = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VisibleArea" type="Area2D" parent="." groups=[
+"visible_area",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisibleArea"]
+polygon = PoolVector2Array( -32, -16, 0, -32, 32, -16, 32, 16, 0, 32, -32, 16 )

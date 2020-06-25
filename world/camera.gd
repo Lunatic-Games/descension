@@ -9,6 +9,7 @@ const ZOOM_LEVELS = [0.5, 1]
 var zoom_index: int = 1
 
 
+# Set zoom level to default
 func _ready():
 	update_zoom_level()
 
@@ -25,6 +26,7 @@ func _input(event: InputEvent):
 		update_zoom_level()
 
 
+# Move when mouse is on screen edge or keyboard input
 func _physics_process(delta: float):
 	var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 	var view_size: Vector2 = get_viewport_rect().size
