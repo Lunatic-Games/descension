@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://world/tiles/base_tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://world/tiles/ground/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/camera.gd" type="Script" id=2]
-[ext_resource path="res://world/features/column.tscn" type="PackedScene" id=3]
+[ext_resource path="res://world/features/column/column.tscn" type="PackedScene" id=3]
+[ext_resource path="res://world/tiles/lava/lava.tscn" type="PackedScene" id=4]
+[ext_resource path="res://world/light2.png" type="Texture" id=5]
+[ext_resource path="res://souls/brawler/character.png" type="Texture" id=6]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+cull_mode = 1
+polygon = PoolVector2Array( 0.345505, 33.7815, -1.39789, 31.2633, -1.78531, 23.5148, 0.53923, 9.56761, -3.52872, 2.98144, -0.623047, 19.2532, -7.40294, 15.5727, -6.82181, -12.9029, 3.25117, -18.7142, 6.15685, -28.2061, 15.6487, -28.7872, 17.1984, -18.1331, 18.5544, -14.6463, 27.6588, -11.3532, 30.3707, 7.43679, 30.3707, 17.7035, 23.9783, 13.0544, 24.9468, -0.505365, 19.1355, 6.08081, 18.3606, 20.6092, 20.104, 22.74, 13.7116, 29.7136, 16.811, 33.0067, 12.5493, 34.1689, 9.44994, 30.8758, 9.83736, 22.74, 12.743, 14.4104, 4.99458, 15.379, 3.83232, 25.0645, 4.02602, 33.7815 )
 
 [node name="Dungeon" type="Node2D"]
+
+[node name="LavaTiles" type="Node2D" parent="."]
+
+[node name="Lava2" parent="LavaTiles" instance=ExtResource( 4 )]
+position = Vector2( 256, 98 )
+
+[node name="Lava4" parent="LavaTiles" instance=ExtResource( 4 )]
+position = Vector2( 192, 98 )
+
+[node name="Lava3" parent="LavaTiles" instance=ExtResource( 4 )]
+position = Vector2( 288, 49 )
+
+[node name="Lava5" parent="LavaTiles" instance=ExtResource( 4 )]
+position = Vector2( 352, 49 )
+
+[node name="Lava6" parent="LavaTiles" instance=ExtResource( 4 )]
+position = Vector2( 416, 49 )
+
+[node name="Lava7" parent="LavaTiles" instance=ExtResource( 4 )]
+position = Vector2( 480, 49 )
 
 [node name="GroundTiles" type="Node2D" parent="."]
 
@@ -167,9 +194,6 @@ position = Vector2( 416, 147 )
 [node name="BaseTile93" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 448, 98 )
 
-[node name="BaseTile94" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 480, 49 )
-
 [node name="BaseTile102" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 512, 0 )
 
@@ -212,9 +236,6 @@ position = Vector2( -32, 147 )
 [node name="BaseTile15" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 160, 147 )
 
-[node name="BaseTile16" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 192, 98 )
-
 [node name="BaseTile17" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 128, 196 )
 
@@ -248,9 +269,6 @@ position = Vector2( 192, 196 )
 [node name="BaseTile24" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 224, 147 )
 
-[node name="BaseTile25" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 256, 98 )
-
 [node name="BaseTile26" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 224, 49 )
 
@@ -259,9 +277,6 @@ position = Vector2( 192, 0 )
 
 [node name="BaseTile28" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 256, 0 )
-
-[node name="BaseTile29" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 288, 49 )
 
 [node name="BaseTile57" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 32, -49 )
@@ -332,14 +347,8 @@ position = Vector2( 352, 147 )
 [node name="BaseTile37" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 384, 98 )
 
-[node name="BaseTile38" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 352, 49 )
-
 [node name="BaseTile39" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 320, 0 )
-
-[node name="BaseTile40" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 416, 49 )
 
 [node name="BaseTile41" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 384, 0 )
@@ -350,7 +359,7 @@ position = Vector2( 448, 0 )
 [node name="Columns" type="Node2D" parent="."]
 
 [node name="Column" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 64, -392 )
+position = Vector2( 64, -390 )
 
 [node name="Column2" parent="Columns" instance=ExtResource( 3 )]
 position = Vector2( 128, -392 )
@@ -609,6 +618,26 @@ position = Vector2( 224, -343 )
 
 [node name="Column6" parent="Columns" instance=ExtResource( 3 )]
 position = Vector2( 288, -343 )
+
+[node name="Shadows" type="Node2D" parent="."]
+
+[node name="BlanketShadow" type="Light2D" parent="Shadows"]
+position = Vector2( 192, -49 )
+texture = ExtResource( 5 )
+texture_scale = 50.0
+energy = 0.9
+mode = 1
+
+[node name="character" type="Sprite" parent="."]
+light_mask = 0
+position = Vector2( 224, 24 )
+texture = ExtResource( 6 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="character"]
+light_mask = 3
+position = Vector2( -6.25858, -1.7524 )
+occluder = SubResource( 1 )
+light_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

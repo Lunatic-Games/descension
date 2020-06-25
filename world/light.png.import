@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/column.png-f38fa30769573dcba25f39a0837961c1.stex"
+path="res://.import/light.png-495682b3aa36129242b33b7449c88bad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/features/assets/column.png"
-dest_files=[ "res://.import/column.png-f38fa30769573dcba25f39a0837961c1.stex" ]
+source_file="res://world/light.png"
+dest_files=[ "res://.import/light.png-495682b3aa36129242b33b7449c88bad.stex" ]
 
 [params]
 
