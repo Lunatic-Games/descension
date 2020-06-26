@@ -16,6 +16,7 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 261, 1, 64, 64 )
 
 [node name="Button" type="TextureButton" parent="."]
+light_mask = 0
 margin_left = -32.0
 margin_top = -32.0
 margin_right = 32.0

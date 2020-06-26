@@ -4,12 +4,15 @@
 [ext_resource path="res://world/camera.gd" type="Script" id=2]
 [ext_resource path="res://world/features/column/column.tscn" type="PackedScene" id=3]
 [ext_resource path="res://world/tiles/lava/lava.tscn" type="PackedScene" id=4]
-[ext_resource path="res://world/light2.png" type="Texture" id=5]
 [ext_resource path="res://souls/brawler/character.png" type="Texture" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 cull_mode = 1
-polygon = PoolVector2Array( 0.345505, 33.7815, -1.39789, 31.2633, -1.78531, 23.5148, 0.53923, 9.56761, -3.52872, 2.98144, -0.623047, 19.2532, -7.40294, 15.5727, -6.82181, -12.9029, 3.25117, -18.7142, 6.15685, -28.2061, 15.6487, -28.7872, 17.1984, -18.1331, 18.5544, -14.6463, 27.6588, -11.3532, 30.3707, 7.43679, 30.3707, 17.7035, 23.9783, 13.0544, 24.9468, -0.505365, 19.1355, 6.08081, 18.3606, 20.6092, 20.104, 22.74, 13.7116, 29.7136, 16.811, 33.0067, 12.5493, 34.1689, 9.44994, 30.8758, 9.83736, 22.74, 12.743, 14.4104, 4.99458, 15.379, 3.83232, 25.0645, 4.02602, 33.7815 )
+polygon = PoolVector2Array( 0.573334, 33.4451, -1.68347, 31.6181, -1.7372, 28.7702, 2.12802, 31.8046, 4.01227, 31.7793, 4.11974, 33.6063 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+cull_mode = 1
+polygon = PoolVector2Array( 10.2514, 29.0709, 14.2888, 31.8046, 16.1161, 31.8281, 16.1161, 33.6226, 12.3522, 33.535, 10.3828, 31.5218 )
 
 [node name="Dungeon" type="Node2D"]
 
@@ -17,6 +20,9 @@ polygon = PoolVector2Array( 0.345505, 33.7815, -1.39789, 31.2633, -1.78531, 23.5
 
 [node name="Lava2" parent="LavaTiles" instance=ExtResource( 4 )]
 position = Vector2( 256, 98 )
+
+[node name="Lava8" parent="LavaTiles" instance=ExtResource( 4 )]
+position = Vector2( 448, -98 )
 
 [node name="Lava4" parent="LavaTiles" instance=ExtResource( 4 )]
 position = Vector2( 192, 98 )
@@ -199,9 +205,6 @@ position = Vector2( 512, 0 )
 
 [node name="BaseTile103" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 480, -49 )
-
-[node name="BaseTile104" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 448, -98 )
 
 [node name="BaseTile105" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 416, -147 )
@@ -619,24 +622,22 @@ position = Vector2( 224, -343 )
 [node name="Column6" parent="Columns" instance=ExtResource( 3 )]
 position = Vector2( 288, -343 )
 
-[node name="Shadows" type="Node2D" parent="."]
-
-[node name="BlanketShadow" type="Light2D" parent="Shadows"]
-position = Vector2( 192, -49 )
-texture = ExtResource( 5 )
-texture_scale = 50.0
-energy = 0.9
-mode = 1
-
 [node name="character" type="Sprite" parent="."]
-light_mask = 0
-position = Vector2( 224, 24 )
+position = Vector2( 165, 116 )
 texture = ExtResource( 6 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="character"]
+show_behind_parent = true
 light_mask = 3
 position = Vector2( -6.25858, -1.7524 )
 occluder = SubResource( 1 )
+light_mask = 3
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="character"]
+show_behind_parent = true
+light_mask = 3
+position = Vector2( -6.25858, -1.7524 )
+occluder = SubResource( 2 )
 light_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -644,3 +645,6 @@ current = true
 smoothing_enabled = true
 smoothing_speed = 10.0
 script = ExtResource( 2 )
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+color = Color( 0.658824, 0.658824, 0.658824, 1 )
