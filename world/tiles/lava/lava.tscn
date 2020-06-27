@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://world/tiles/lava/assets/lava.png" type="Texture" id=1]
 [ext_resource path="res://world/light/light.tscn" type="PackedScene" id=2]
+[ext_resource path="res://world/tiles/lava/lava.gd" type="Script" id=3]
+[ext_resource path="res://world/tiles/lava/assets/particle.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "glow"
@@ -32,15 +34,217 @@ tracks/1/keys = {
 "values": [ 5.0, 5.5, 5.0 ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "bubble_1"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 64, 64 ), Rect2( 64, 0, 64, 64 ), Rect2( 128, 0, 64, 64 ), Rect2( 192, 0, 64, 64 ), Rect2( 256, 0, 64, 64 ), Rect2( 320, 0, 64, 64 ), Rect2( 0, 0, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5.49863, 3.99992 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "bubble_2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 64, 64, 64 ), Rect2( 64, 64, 64, 64 ), Rect2( 128, 64, 64, 64 ), Rect2( 192, 64, 64, 64 ), Rect2( 256, 64, 64, 64 ), Rect2( 320, 64, 64, 64 ), Rect2( 0, 0, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 13, -9 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "bubble_3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 128, 64, 64 ), Rect2( 64, 128, 64, 64 ), Rect2( 128, 128, 64, 64 ), Rect2( 192, 128, 64, 64 ), Rect2( 256, 128, 64, 64 ), Rect2( 320, 128, 64, 64 ), Rect2( 0, 0, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4, -22 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "bubble_4"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 192, 64, 64 ), Rect2( 64, 192, 64, 64 ), Rect2( 128, 192, 64, 64 ), Rect2( 192, 192, 64, 64 ), Rect2( 256, 192, 64, 64 ), Rect2( 320, 192, 64, 64 ), Rect2( 0, 0, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -14, -13 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 64, 64 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "bubble"
+length = 8.0
+loop = true
+tracks/0/type = "animation"
+tracks/0/path = NodePath("SpriteAnimator")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "bubble_1", "bubble_3", "bubble_2", "bubble_4" ),
+"times": PoolRealArray( 0, 2, 4, 6 )
+}
+
+[sub_resource type="ParticlesMaterial" id=8]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 64.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
 [node name="Lava" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="GapFillingSprite" type="Sprite" parent="."]
 scale = Vector2( 1.02, 1.02 )
 z_index = -1
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "visible_area",
@@ -59,8 +263,29 @@ texture_scale = 5.0
 texture_scale = 5.0
 energy = 1.25
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="GlowAnimator" type="AnimationPlayer" parent="."]
 autoplay = "glow"
 anims/glow = SubResource( 1 )
+
+[node name="SpriteAnimator" type="AnimationPlayer" parent="."]
+anims/bubble_1 = SubResource( 2 )
+anims/bubble_2 = SubResource( 3 )
+anims/bubble_3 = SubResource( 4 )
+anims/bubble_4 = SubResource( 5 )
+anims/idle = SubResource( 6 )
+
+[node name="BubblingAnimator" type="AnimationPlayer" parent="."]
+autoplay = "bubble"
+anims/bubble = SubResource( 7 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -14, -13 )
+z_index = 1
+emitting = false
+amount = 4
+one_shot = true
+local_coords = false
+process_material = SubResource( 8 )
+texture = ExtResource( 4 )
 
 [editable path="Light"]

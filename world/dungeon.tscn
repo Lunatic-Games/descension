@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://world/tiles/ground/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/camera.gd" type="Script" id=2]
 [ext_resource path="res://world/features/column/column.tscn" type="PackedScene" id=3]
 [ext_resource path="res://world/tiles/lava/lava.tscn" type="PackedScene" id=4]
 [ext_resource path="res://souls/brawler/character.png" type="Texture" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+light_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id=1]
 cull_mode = 1
@@ -19,25 +22,25 @@ polygon = PoolVector2Array( 10.2514, 29.0709, 14.2888, 31.8046, 16.1161, 31.8281
 [node name="LavaTiles" type="Node2D" parent="."]
 
 [node name="Lava2" parent="LavaTiles" instance=ExtResource( 4 )]
-position = Vector2( 256, 98 )
+position = Vector2( 256, 96 )
 
 [node name="Lava8" parent="LavaTiles" instance=ExtResource( 4 )]
-position = Vector2( 448, -98 )
+position = Vector2( 448, -96 )
 
 [node name="Lava4" parent="LavaTiles" instance=ExtResource( 4 )]
-position = Vector2( 192, 98 )
+position = Vector2( 192, 96 )
 
 [node name="Lava3" parent="LavaTiles" instance=ExtResource( 4 )]
-position = Vector2( 288, 49 )
+position = Vector2( 288, 48 )
 
 [node name="Lava5" parent="LavaTiles" instance=ExtResource( 4 )]
-position = Vector2( 352, 49 )
+position = Vector2( 352, 48 )
 
 [node name="Lava6" parent="LavaTiles" instance=ExtResource( 4 )]
-position = Vector2( 416, 49 )
+position = Vector2( 416, 48 )
 
 [node name="Lava7" parent="LavaTiles" instance=ExtResource( 4 )]
-position = Vector2( 480, 49 )
+position = Vector2( 480, 48 )
 
 [node name="GroundTiles" type="Node2D" parent="."]
 
@@ -51,64 +54,64 @@ position = Vector2( 64, 0 )
 position = Vector2( 128, 0 )
 
 [node name="BaseTile4" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 32, 49 )
+position = Vector2( 32, 48 )
 
 [node name="BaseTile5" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 96, 49 )
+position = Vector2( 96, 48 )
 
 [node name="BaseTile6" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 160, 49 )
+position = Vector2( 160, 48 )
 
 [node name="BaseTile70" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 64, -294 )
+position = Vector2( 64, -288 )
 
 [node name="BaseTile69" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 128, -294 )
+position = Vector2( 128, -288 )
 
 [node name="BaseTile68" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 32, -245 )
+position = Vector2( 32, -240 )
 
 [node name="BaseTile67" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 96, -245 )
+position = Vector2( 96, -240 )
 
 [node name="BaseTile66" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 160, -245 )
+position = Vector2( 160, -240 )
 
 [node name="BaseTile7" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -32, 49 )
+position = Vector2( -32, 48 )
 
 [node name="BaseTile8" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 0, 98 )
+position = Vector2( 0, 96 )
 
 [node name="BaseTile9" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 64, 98 )
+position = Vector2( 64, 96 )
 
 [node name="BaseTile10" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 128, 98 )
+position = Vector2( 128, 96 )
 
 [node name="BaseTile11" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 96, 147 )
+position = Vector2( 96, 144 )
 
 [node name="BaseTile12" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 32, 147 )
+position = Vector2( 32, 144 )
 
 [node name="BaseTile65" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 64, -196 )
+position = Vector2( 64, -192 )
 
 [node name="BaseTile64" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 128, -196 )
+position = Vector2( 128, -192 )
 
 [node name="BaseTile63" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 96, -147 )
+position = Vector2( 96, -144 )
 
 [node name="BaseTile62" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 32, -147 )
+position = Vector2( 32, -144 )
 
 [node name="BaseTile13" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -64, 98 )
+position = Vector2( -64, 96 )
 
 [node name="BaseTile71" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -96, 49 )
+position = Vector2( -96, 48 )
 
 [node name="BaseTile72" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( -64, 0 )
@@ -117,163 +120,163 @@ position = Vector2( -64, 0 )
 position = Vector2( -128, 0 )
 
 [node name="BaseTile74" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -96, -49 )
+position = Vector2( -96, -48 )
 
 [node name="BaseTile75" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -64, -98 )
+position = Vector2( -64, -96 )
 
 [node name="BaseTile76" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -32, -147 )
+position = Vector2( -32, -144 )
 
 [node name="BaseTile77" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 0, -196 )
+position = Vector2( 0, -192 )
 
 [node name="BaseTile78" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 0, -98 )
+position = Vector2( 0, -96 )
 
 [node name="BaseTile79" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -32, -49 )
+position = Vector2( -32, -48 )
 
 [node name="BaseTile80" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 64, 294 )
+position = Vector2( 64, 288 )
 
 [node name="BaseTile95" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 0, 294 )
+position = Vector2( 0, 288 )
 
 [node name="BaseTile96" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -32, 245 )
+position = Vector2( -32, 240 )
 
 [node name="BaseTile97" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -64, 196 )
+position = Vector2( -64, 192 )
 
 [node name="BaseTile98" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -96, 147 )
+position = Vector2( -96, 144 )
 
 [node name="BaseTile99" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -128, 98 )
+position = Vector2( -128, 96 )
 
 [node name="BaseTile100" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -160, 49 )
+position = Vector2( -160, 48 )
 
 [node name="BaseTile101" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( -192, 0 )
 
 [node name="BaseTile109" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -160, -49 )
+position = Vector2( -160, -48 )
 
 [node name="BaseTile110" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -128, -98 )
+position = Vector2( -128, -96 )
 
 [node name="BaseTile111" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -96, -147 )
+position = Vector2( -96, -144 )
 
 [node name="BaseTile112" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -64, -196 )
+position = Vector2( -64, -192 )
 
 [node name="BaseTile113" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -32, -245 )
+position = Vector2( -32, -240 )
 
 [node name="BaseTile114" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 0, -294 )
+position = Vector2( 0, -288 )
 
 [node name="BaseTile81" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 128, 294 )
+position = Vector2( 128, 288 )
 
 [node name="BaseTile82" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 192, 294 )
+position = Vector2( 192, 288 )
 
 [node name="BaseTile83" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 256, 294 )
+position = Vector2( 256, 288 )
 
 [node name="BaseTile89" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 320, 294 )
+position = Vector2( 320, 288 )
 
 [node name="BaseTile90" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 352, 245 )
+position = Vector2( 352, 240 )
 
 [node name="BaseTile91" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 384, 196 )
+position = Vector2( 384, 192 )
 
 [node name="BaseTile92" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 416, 147 )
+position = Vector2( 416, 144 )
 
 [node name="BaseTile93" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 448, 98 )
+position = Vector2( 448, 96 )
 
 [node name="BaseTile102" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 512, 0 )
 
 [node name="BaseTile103" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 480, -49 )
+position = Vector2( 480, -48 )
 
 [node name="BaseTile105" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 416, -147 )
+position = Vector2( 416, -144 )
 
 [node name="BaseTile106" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 384, -196 )
+position = Vector2( 384, -192 )
 
 [node name="BaseTile107" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 352, -245 )
+position = Vector2( 352, -240 )
 
 [node name="BaseTile108" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 320, -294 )
+position = Vector2( 320, -288 )
 
 [node name="BaseTile84" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 352, -49 )
+position = Vector2( 352, -48 )
 
 [node name="BaseTile85" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 416, -49 )
+position = Vector2( 416, -48 )
 
 [node name="BaseTile86" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 384, -98 )
+position = Vector2( 384, -96 )
 
 [node name="BaseTile87" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 352, -147 )
+position = Vector2( 352, -144 )
 
 [node name="BaseTile88" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 320, -196 )
+position = Vector2( 320, -192 )
 
 [node name="BaseTile14" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( -32, 147 )
+position = Vector2( -32, 144 )
 
 [node name="BaseTile15" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 160, 147 )
+position = Vector2( 160, 144 )
 
 [node name="BaseTile17" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 128, 196 )
+position = Vector2( 128, 192 )
 
 [node name="BaseTile18" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 64, 196 )
+position = Vector2( 64, 192 )
 
 [node name="BaseTile61" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 160, -147 )
+position = Vector2( 160, -144 )
 
 [node name="BaseTile60" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 192, -196 )
+position = Vector2( 192, -192 )
 
 [node name="BaseTile58" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 64, -98 )
+position = Vector2( 64, -96 )
 
 [node name="BaseTile19" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 0, 196 )
+position = Vector2( 0, 192 )
 
 [node name="BaseTile20" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 32, 245 )
+position = Vector2( 32, 240 )
 
 [node name="BaseTile21" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 96, 245 )
+position = Vector2( 96, 240 )
 
 [node name="BaseTile22" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 160, 245 )
+position = Vector2( 160, 240 )
 
 [node name="BaseTile23" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 192, 196 )
+position = Vector2( 192, 192 )
 
 [node name="BaseTile24" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 224, 147 )
+position = Vector2( 224, 144 )
 
 [node name="BaseTile26" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 224, 49 )
+position = Vector2( 224, 48 )
 
 [node name="BaseTile27" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 192, 0 )
@@ -282,73 +285,73 @@ position = Vector2( 192, 0 )
 position = Vector2( 256, 0 )
 
 [node name="BaseTile57" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 32, -49 )
+position = Vector2( 32, -48 )
 
 [node name="BaseTile56" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 96, -49 )
+position = Vector2( 96, -48 )
 
 [node name="BaseTile55" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 160, -49 )
+position = Vector2( 160, -48 )
 
 [node name="BaseTile54" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 192, -98 )
+position = Vector2( 192, -96 )
 
 [node name="BaseTile53" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 224, -147 )
+position = Vector2( 224, -144 )
 
 [node name="BaseTile52" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 256, -196 )
+position = Vector2( 256, -192 )
 
 [node name="BaseTile51" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 224, -245 )
+position = Vector2( 224, -240 )
 
 [node name="BaseTile50" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 192, -294 )
+position = Vector2( 192, -288 )
 
 [node name="BaseTile49" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 256, -294 )
+position = Vector2( 256, -288 )
 
 [node name="BaseTile48" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 288, -245 )
+position = Vector2( 288, -240 )
 
 [node name="BaseTile30" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 320, 98 )
+position = Vector2( 320, 96 )
 
 [node name="BaseTile31" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 288, 147 )
+position = Vector2( 288, 144 )
 
 [node name="BaseTile32" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 256, 196 )
+position = Vector2( 256, 192 )
 
 [node name="BaseTile33" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 224, 245 )
+position = Vector2( 224, 240 )
 
 [node name="BaseTile34" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 288, 245 )
+position = Vector2( 288, 240 )
 
 [node name="BaseTile35" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 320, 196 )
+position = Vector2( 320, 192 )
 
 [node name="BaseTile47" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 288, -147 )
+position = Vector2( 288, -144 )
 
 [node name="BaseTile46" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 256, -98 )
+position = Vector2( 256, -96 )
 
 [node name="BaseTile45" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 224, -49 )
+position = Vector2( 224, -48 )
 
 [node name="BaseTile44" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 288, -49 )
+position = Vector2( 288, -48 )
 
 [node name="BaseTile43" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 320, -98 )
+position = Vector2( 320, -96 )
 
 [node name="BaseTile36" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 352, 147 )
+position = Vector2( 352, 144 )
 
 [node name="BaseTile37" parent="GroundTiles" instance=ExtResource( 1 )]
-position = Vector2( 384, 98 )
+position = Vector2( 384, 96 )
 
 [node name="BaseTile39" parent="GroundTiles" instance=ExtResource( 1 )]
 position = Vector2( 320, 0 )
@@ -362,67 +365,67 @@ position = Vector2( 448, 0 )
 [node name="Columns" type="Node2D" parent="."]
 
 [node name="Column" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 64, -390 )
+position = Vector2( 64, -384 )
 
 [node name="Column2" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 128, -392 )
+position = Vector2( 128, -384 )
 
 [node name="Column3" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 192, -392 )
+position = Vector2( 192, -384 )
 
 [node name="Column4" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 256, -392 )
+position = Vector2( 256, -384 )
 
 [node name="Column5" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 320, -392 )
+position = Vector2( 320, -384 )
 
 [node name="Column11" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 0, -392 )
+position = Vector2( 0, -384 )
 
 [node name="Column12" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -64, -392 )
+position = Vector2( -64, -384 )
 
 [node name="Column13" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -32, -343 )
+position = Vector2( -32, -336 )
 
 [node name="Column14" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -96, -343 )
+position = Vector2( -96, -336 )
 
 [node name="Column15" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -64, -294 )
+position = Vector2( -64, -288 )
 
 [node name="Column16" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -128, -294 )
+position = Vector2( -128, -288 )
 
 [node name="Column17" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -96, -245 )
+position = Vector2( -96, -240 )
 
 [node name="Column18" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -160, -245 )
+position = Vector2( -160, -240 )
 
 [node name="Column19" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -128, -196 )
+position = Vector2( -128, -192 )
 
 [node name="Column20" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -192, -196 )
+position = Vector2( -192, -192 )
 
 [node name="Column21" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -160, -147 )
+position = Vector2( -160, -144 )
 
 [node name="Column22" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -224, -147 )
+position = Vector2( -224, -144 )
 
 [node name="Column23" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -192, -98 )
+position = Vector2( -192, -96 )
 
 [node name="Column24" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -256, -98 )
+position = Vector2( -256, -96 )
 
 [node name="Column25" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -224, -49 )
+position = Vector2( -224, -48 )
 
 [node name="Column26" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -288, -49 )
+position = Vector2( -288, -48 )
 
 [node name="Column27" parent="Columns" instance=ExtResource( 3 )]
 position = Vector2( -320, 0 )
@@ -431,37 +434,37 @@ position = Vector2( -320, 0 )
 position = Vector2( -256, 0 )
 
 [node name="Column29" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 384, -392 )
+position = Vector2( 384, -384 )
 
 [node name="Column30" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 352, -343 )
+position = Vector2( 352, -336 )
 
 [node name="Column31" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 416, -343 )
+position = Vector2( 416, -336 )
 
 [node name="Column32" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 384, -294 )
+position = Vector2( 384, -288 )
 
 [node name="Column33" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 448, -294 )
+position = Vector2( 448, -288 )
 
 [node name="Column34" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 416, -245 )
+position = Vector2( 416, -240 )
 
 [node name="Column35" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 480, -245 )
+position = Vector2( 480, -240 )
 
 [node name="Column36" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 448, -196 )
+position = Vector2( 448, -192 )
 
 [node name="Column37" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 512, -196 )
+position = Vector2( 512, -192 )
 
 [node name="Column38" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 480, -147 )
+position = Vector2( 480, -144 )
 
 [node name="Column39" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 544, -147 )
+position = Vector2( 544, -144 )
 
 [node name="Column40" parent="Columns" instance=ExtResource( 3 )]
 position = Vector2( 512, -98 )
@@ -494,136 +497,137 @@ position = Vector2( 576, 98 )
 position = Vector2( 512, 98 )
 
 [node name="Column50" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 544, 147 )
+position = Vector2( 544, 144 )
 
 [node name="Column51" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 480, 147 )
+position = Vector2( 480, 144 )
 
 [node name="Column52" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 512, 196 )
+position = Vector2( 512, 192 )
 
 [node name="Column53" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 448, 196 )
+position = Vector2( 448, 192 )
 
 [node name="Column54" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 480, 245 )
+position = Vector2( 480, 240 )
 
 [node name="Column55" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 416, 245 )
+position = Vector2( 416, 240 )
 
 [node name="Column56" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 448, 294 )
+position = Vector2( 448, 288 )
 
 [node name="Column57" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 384, 294 )
+position = Vector2( 384, 288 )
 
 [node name="Column58" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 416, 343 )
+position = Vector2( 416, 336 )
 
 [node name="Column59" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 352, 343 )
+position = Vector2( 352, 336 )
 
 [node name="Column60" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -288, 49 )
+position = Vector2( -288, 48 )
 
 [node name="Column61" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -224, 49 )
+position = Vector2( -224, 48 )
 
 [node name="Column62" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -256, 98 )
+position = Vector2( -256, 96 )
 
 [node name="Column63" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -192, 98 )
+position = Vector2( -192, 96 )
 
 [node name="Column87" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 128, -98 )
+position = Vector2( 128, -96 )
 
 [node name="Column64" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -224, 147 )
+position = Vector2( -224, 144 )
 
 [node name="Column65" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -160, 147 )
+position = Vector2( -160, 144 )
 
 [node name="Column66" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -192, 196 )
+position = Vector2( -192, 192 )
 
 [node name="Column67" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -128, 196 )
+position = Vector2( -128, 192 )
 
 [node name="Column68" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -160, 245 )
+position = Vector2( -160, 240 )
 
 [node name="Column69" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -96, 245 )
+position = Vector2( -96, 240 )
 
 [node name="Column70" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -128, 294 )
+position = Vector2( -128, 288 )
 
 [node name="Column71" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -64, 294 )
+position = Vector2( -64, 288 )
 
 [node name="Column72" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -96, 343 )
+position = Vector2( -96, 336 )
 
 [node name="Column73" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -32, 343 )
+position = Vector2( -32, 336 )
 
 [node name="Column74" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 32, 343 )
+position = Vector2( 32, 336 )
 
 [node name="Column75" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 96, 343 )
+position = Vector2( 96, 336 )
 
 [node name="Column76" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 160, 343 )
+position = Vector2( 160, 336 )
 
 [node name="Column77" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 224, 343 )
+position = Vector2( 224, 336 )
 
 [node name="Column78" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 288, 343 )
+position = Vector2( 288, 336 )
 
 [node name="Column79" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( -64, 392 )
+position = Vector2( -64, 384 )
 
 [node name="Column80" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 0, 392 )
+position = Vector2( 0, 384 )
 
 [node name="Column81" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 64, 392 )
+position = Vector2( 64, 384 )
 
 [node name="Column82" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 128, 392 )
+position = Vector2( 128, 384 )
 
 [node name="Column83" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 192, 392 )
+position = Vector2( 192, 384 )
 
 [node name="Column84" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 256, 392 )
+position = Vector2( 256, 384 )
 
 [node name="Column85" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 320, 392 )
+position = Vector2( 320, 384 )
 
 [node name="Column86" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 384, 392 )
+position = Vector2( 384, 384 )
 
 [node name="Column10" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 32, -343 )
+position = Vector2( 32, -336 )
 
 [node name="Column9" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 96, -343 )
+position = Vector2( 96, -336 )
 
 [node name="Column8" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 160, -343 )
+position = Vector2( 160, -336 )
 
 [node name="Column7" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 224, -343 )
+position = Vector2( 224, -336 )
 
 [node name="Column6" parent="Columns" instance=ExtResource( 3 )]
-position = Vector2( 288, -343 )
+position = Vector2( 288, -336 )
 
 [node name="character" type="Sprite" parent="."]
-position = Vector2( 165, 116 )
+material = SubResource( 3 )
+position = Vector2( 192, 148 )
 texture = ExtResource( 6 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="character"]
