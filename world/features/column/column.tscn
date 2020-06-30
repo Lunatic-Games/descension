@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://world/features/column/column.gd" type="Script" id=1]
 [ext_resource path="res://world/features/column/assets/column.png" type="Texture" id=2]
@@ -29,22 +29,17 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/dist_to_screen_border = 200.0
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 1 )
 shader_param/dist_to_screen_border = 0.0
 
 [node name="Column" type="Node2D"]
 light_mask = 0
-material = SubResource( 2 )
 position = Vector2( 520, 320 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-light_mask = 0
-material = SubResource( 3 )
-position = Vector2( 0, -58 )
+light_mask = 4
+material = SubResource( 2 )
+position = Vector2( 0, -52 )
 texture = ExtResource( 2 )
 
 [node name="ObscurePosition" type="Position2D" parent="."]
@@ -54,5 +49,5 @@ position = Vector2( 0, -103 )
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ObstructionArea"]
-polygon = PoolVector2Array( -24, -107, 0, -124, 24, -108, 24, -48, 0, -40, -24, -48 )
+polygon = PoolVector2Array( -24, -107, -1, -123, 24, -108, 24, -48, 0, -40, -24, -48 )
 [connection signal="area_entered" from="ObstructionArea" to="." method="_on_ObstructionArea_area_entered"]
