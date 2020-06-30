@@ -3,7 +3,7 @@ extends Node2D
 
 const MIN_ALPHA := 0.12
 const MOUSE_ALPHA_DIST := 300.0
-const SCREEN_EDGE_ALPHA_DIST := 100.0
+const SCREEN_EDGE_ALPHA_DIST := 75.0
 
 var obstructs := false
 

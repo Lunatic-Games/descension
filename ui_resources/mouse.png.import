@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/highlight.png-dd2e9e2b9fe2bff6b3967828f3a4df7b.stex"
+path="res://.import/mouse.png-923bfda164bf2e11ea6066132693a553.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/tiles/ground/assets/highlight.png"
-dest_files=[ "res://.import/highlight.png-dd2e9e2b9fe2bff6b3967828f3a4df7b.stex" ]
+source_file="res://ui_resources/mouse.png"
+dest_files=[ "res://.import/mouse.png-923bfda164bf2e11ea6066132693a553.stex" ]
 
 [params]
 

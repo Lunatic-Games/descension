@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lava.png-e98d8d1c53ed548257156451338f7ad6.stex"
+path="res://.import/path_end_dot_pressed.png-58c31e230f11fa6372ffa6715b30d060.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/tiles/lava/assets/lava.png"
-dest_files=[ "res://.import/lava.png-e98d8d1c53ed548257156451338f7ad6.stex" ]
+source_file="res://world/tiles/tile/assets/path_end_dot_pressed.png"
+dest_files=[ "res://.import/path_end_dot_pressed.png-58c31e230f11fa6372ffa6715b30d060.stex" ]
 
 [params]
 

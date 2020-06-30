@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/click_bitmask.png-795ade36ad7b7f8fe616256104a19c0c.res"
+
+[deps]
+
+source_file="res://world/tiles/tile/assets/click_bitmask.png"
+dest_files=[ "res://.import/click_bitmask.png-795ade36ad7b7f8fe616256104a19c0c.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5
