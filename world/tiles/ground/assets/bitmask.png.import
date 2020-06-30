@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/bitmask.png-33543b8b3985b63975b12a0fd2609c6b.res"
+
+[deps]
+
+source_file="res://world/tiles/ground/assets/bitmask.png"
+dest_files=[ "res://.import/bitmask.png-33543b8b3985b63975b12a0fd2609c6b.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

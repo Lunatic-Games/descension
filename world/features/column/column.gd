@@ -19,6 +19,7 @@ func _physics_process(_delta):
 # Check if obstructing something in group 'visible_area'
 func _on_ObstructionArea_area_entered(area: Area2D):
 	if area.is_in_group("visible_area"):
+		$ObstructionArea/CollisionPolygon2D.set_deferred("disabled", true)
 		obstructs = true
 
 

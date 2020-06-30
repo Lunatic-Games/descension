@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pressed.png-2c8e92e01925d8cca9798d41460ec253.stex"
+path="res://.import/highlight.png-dd2e9e2b9fe2bff6b3967828f3a4df7b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/tiles/assets/pressed.png"
-dest_files=[ "res://.import/pressed.png-2c8e92e01925d8cca9798d41460ec253.stex" ]
+source_file="res://world/tiles/ground/assets/highlight.png"
+dest_files=[ "res://.import/highlight.png-dd2e9e2b9fe2bff6b3967828f3a4df7b.stex" ]
 
 [params]
 
