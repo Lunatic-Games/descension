@@ -16,6 +16,9 @@ func _ready():
 
 # Handle pan and zoom inputs
 func _input(event: InputEvent):
+	if event is InputEventMouseMotion:
+		print("Global: ", event.global_position)
+	
 	if event.is_action_pressed("camera_zoom_in"):
 		zoom_index -= 1
 		zoom_index = max(zoom_index, 0) as int
@@ -45,6 +48,13 @@ func _physics_process(delta: float):
 	movement *= PAN_SPEED * delta
 	position.x = (position.x + movement.x)
 	position.y = (position.y + movement.y)
+	
+	var mouse_update = InputEventMouseMotion.new()
+	mouse_update.device = 0
+	var diff = (OS.window_size - Vector2(1024, 576)) / 2
+	mouse_update.position = get_viewport().get_mouse_position() + diff
+	get_tree().input_event(mouse_update)
+	
 
 
 # Update zoom x and y to be ZOOM_LEVELS[zoom_index]

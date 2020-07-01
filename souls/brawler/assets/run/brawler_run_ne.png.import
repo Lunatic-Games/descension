@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Brawler_Idle_SE.png-1653ca807bfef9aa91abee11c86dab7f.stex"
+path="res://.import/brawler_run_ne.png-6a446b05f4de0a22383fd12b71f284d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://souls/brawler/Brawler_Idle_SE.png"
-dest_files=[ "res://.import/Brawler_Idle_SE.png-1653ca807bfef9aa91abee11c86dab7f.stex" ]
+source_file="res://souls/brawler/assets/run/brawler_run_ne.png"
+dest_files=[ "res://.import/brawler_run_ne.png-6a446b05f4de0a22383fd12b71f284d6.stex" ]
 
 [params]
 

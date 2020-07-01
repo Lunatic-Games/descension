@@ -5,11 +5,6 @@
 [ext_resource path="res://world/features/lava/lava.gd" type="Script" id=3]
 [ext_resource path="res://world/features/lava/assets/particle.png" type="Texture" id=4]
 
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "glow"
 length = 3.0
@@ -64,7 +59,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -5.49863, 3.99992 ) ]
+"values": [ Vector2( -5, 37 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Particles2D:emitting")
@@ -115,7 +110,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 13, -9 ) ]
+"values": [ Vector2( 13, 23 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -142,7 +137,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 4, -22 ) ]
+"values": [ Vector2( 4, 11 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Particles2D:emitting")
@@ -193,7 +188,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -14, -13 ) ]
+"values": [ Vector2( -14, 18 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -228,20 +223,20 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2, 4, 6 )
 }
 
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id=8]
 offsets = PoolRealArray( 0, 0.484663, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=10]
-gradient = SubResource( 9 )
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
 
-[sub_resource type="Curve" id=11]
+[sub_resource type="Curve" id=10]
 _data = [ Vector2( 0, 0.764773 ), 0.0, 0.0, 0, 0, Vector2( 0.197708, 1 ), 0.00826187, 0.00826187, 0, 0, Vector2( 1, 0.509091 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=12]
-curve = SubResource( 11 )
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
 
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="ParticlesMaterial" id=12]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 gravity = Vector3( 0, 98, 0 )
@@ -249,13 +244,14 @@ initial_velocity = 64.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 1.5
-scale_curve = SubResource( 12 )
-color_ramp = SubResource( 10 )
+scale_curve = SubResource( 11 )
+color_ramp = SubResource( 9 )
 
 [node name="Lava" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="GapFillingSprite" type="Sprite" parent="."]
+position = Vector2( 0, 32 )
 scale = Vector2( 1.02, 1.02 )
 z_index = -1
 texture = ExtResource( 1 )
@@ -263,25 +259,28 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 32 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 256, 192, 64, 64 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "visible_area",
 ]]
 visible = false
+position = Vector2( 0, 33 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -32, -16, 0, -32, 32, -16, 32, 16, 0, 32, -32, 16 )
 
 [node name="Light" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 33 )
 
 [node name="NormaLight" parent="Light" index="0"]
-texture_scale = 5.0
+texture_scale = 5.16741
 
 [node name="ShadowLight" parent="Light" index="1"]
-texture_scale = 5.0
+texture_scale = 5.21534
 energy = 1.25
 
 [node name="GlowAnimator" type="AnimationPlayer" parent="."]
@@ -300,12 +299,12 @@ autoplay = "bubble"
 anims/bubble = SubResource( 7 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( -14, -13 )
+position = Vector2( -14, 18 )
 emitting = false
 amount = 4
 lifetime = 0.75
 one_shot = true
-process_material = SubResource( 8 )
+process_material = SubResource( 12 )
 texture = ExtResource( 4 )
 
 [editable path="Light"]

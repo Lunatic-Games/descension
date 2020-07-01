@@ -39,14 +39,15 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 4
 material = SubResource( 2 )
-position = Vector2( 0, -52 )
+position = Vector2( 0, -22 )
 texture = ExtResource( 2 )
 
 [node name="ObscurePosition" type="Position2D" parent="."]
-position = Vector2( 0, -103 )
+position = Vector2( 0, -67 )
 
 [node name="ObstructionArea" type="Area2D" parent="."]
 visible = false
+position = Vector2( 0, 32 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ObstructionArea"]
 polygon = PoolVector2Array( -24, -107, -1, -123, 24, -108, 24, -48, 0, -40, -24, -48 )

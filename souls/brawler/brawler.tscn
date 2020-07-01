@@ -1,0 +1,411 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://souls/soul/soul.tscn" type="PackedScene" id=1]
+[ext_resource path="res://souls/brawler/assets/run/brawler_run_e.png" type="Texture" id=2]
+[ext_resource path="res://souls/brawler/assets/idle/brawler_idle_ne.png" type="Texture" id=3]
+[ext_resource path="res://souls/brawler/assets/idle/brawler_idle_nw.png" type="Texture" id=4]
+[ext_resource path="res://souls/brawler/assets/idle/brawler_idle_sw.png" type="Texture" id=5]
+[ext_resource path="res://souls/brawler/assets/idle/brawler_idle_se.png" type="Texture" id=6]
+[ext_resource path="res://souls/brawler/assets/run/brawler_run_ne.png" type="Texture" id=7]
+[ext_resource path="res://souls/brawler/assets/run/brawler_run_nw.png" type="Texture" id=8]
+[ext_resource path="res://souls/brawler/assets/run/brawler_run_se.png" type="Texture" id=9]
+[ext_resource path="res://souls/brawler/assets/run/brawler_run_w.png" type="Texture" id=10]
+[ext_resource path="res://souls/brawler/assets/run/brawler_run_sw.png" type="Texture" id=11]
+[ext_resource path="res://souls/brawler/brawler.gd" type="Script" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "east"
+length = 1.8
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ), Rect2( 576, 0, 96, 96 ), Rect2( 672, 0, 96, 96 ), Rect2( 768, 0, 96, 96 ), Rect2( 864, 0, 96, 96 ), Rect2( 960, 0, 96, 96 ), Rect2( 1056, 0, 96, 96 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "north_east"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ), Rect2( 576, 0, 96, 96 ), Rect2( 672, 0, 96, 96 ), Rect2( 768, 0, 96, 96 ), Rect2( 864, 0, 96, 96 ), Rect2( 960, 0, 96, 96 ), Rect2( 1056, 0, 96, 96 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "north_west"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ), Rect2( 576, 0, 96, 96 ), Rect2( 672, 0, 96, 96 ), Rect2( 768, 0, 96, 96 ), Rect2( 864, 0, 96, 96 ), Rect2( 960, 0, 96, 96 ), Rect2( 1056, 0, 96, 96 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "south_east"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ), Rect2( 576, 0, 96, 96 ), Rect2( 672, 0, 96, 96 ), Rect2( 768, 0, 96, 96 ), Rect2( 864, 0, 96, 96 ), Rect2( 960, 0, 96, 96 ), Rect2( 1056, 0, 96, 96 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "south_west"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ), Rect2( 576, 0, 96, 96 ), Rect2( 672, 0, 96, 96 ), Rect2( 768, 0, 96, 96 ), Rect2( 864, 0, 96, 96 ), Rect2( 960, 0, 96, 96 ), Rect2( 1056, 0, 96, 96 ) ]
+}
+
+[sub_resource type="StreamTexture" id=6]
+
+[sub_resource type="Animation" id=7]
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ), Rect2( 576, 0, 96, 96 ), Rect2( 672, 0, 96, 96 ), Rect2( 768, 0, 96, 96 ), Rect2( 864, 0, 96, 96 ), Rect2( 960, 0, 96, 96 ), Rect2( 1056, 0, 96, 96 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "east"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "north_east"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "north_west"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "south_east"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "south_west"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "west"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 96, 96 ), Rect2( 96, 0, 96, 96 ), Rect2( 192, 0, 96, 96 ), Rect2( 288, 0, 96, 96 ), Rect2( 384, 0, 96, 96 ), Rect2( 480, 0, 96, 96 ) ]
+}
+
+[sub_resource type="OccluderPolygon2D" id=14]
+cull_mode = 1
+polygon = PoolVector2Array( -13, 45, -13, 43, -9, 43, -9, 45, -7, 45, -7, 47, -11, 47, -11, 45 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+cull_mode = 1
+polygon = PoolVector2Array( -1, 43, 3, 43, 3, 45, 5, 45, 5, 47, 1, 47, 1, 45, -1, 45 )
+
+[node name="Brawler" instance=ExtResource( 1 )]
+script = ExtResource( 12 )
+
+[node name="AnimationPlayer" parent="Idle" index="0"]
+anims/east = SubResource( 1 )
+anims/north_east = SubResource( 2 )
+anims/north_west = SubResource( 3 )
+anims/south_east = SubResource( 4 )
+anims/south_west = SubResource( 5 )
+anims/west = SubResource( 7 )
+
+[node name="AnimationPlayer" parent="Moving" index="0"]
+anims/east = SubResource( 8 )
+anims/north_east = SubResource( 9 )
+anims/north_west = SubResource( 10 )
+anims/south_east = SubResource( 11 )
+anims/south_west = SubResource( 12 )
+anims/west = SubResource( 13 )
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2( 4, -46 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 96, 96 )
+
+[node name="LeftFootOccluder" type="LightOccluder2D" parent="." index="3"]
+show_behind_parent = true
+light_mask = 3
+position = Vector2( 4, -46 )
+occluder = SubResource( 14 )
+light_mask = 3
+
+[node name="RightFootOccluder" type="LightOccluder2D" parent="." index="4"]
+show_behind_parent = true
+light_mask = 3
+position = Vector2( 4, -46 )
+occluder = SubResource( 15 )
+light_mask = 3
