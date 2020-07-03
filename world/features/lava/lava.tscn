@@ -265,7 +265,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
-"visible_area",
+"piercing_view",
 ]]
 visible = false
 position = Vector2( 0, 33 )

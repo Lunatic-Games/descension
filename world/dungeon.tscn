@@ -640,7 +640,7 @@ position = Vector2( 224, -336 )
 position = Vector2( 288, -336 )
 
 [node name="Brawler" parent="Map" instance=ExtResource( 5 )]
-position = Vector2( 95, 86 )
+position = Vector2( 96, 90 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 161, 25 )
