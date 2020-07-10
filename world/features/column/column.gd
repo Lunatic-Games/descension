@@ -6,7 +6,7 @@ const MOUSE_ALPHA_DIST := 300.0
 const SCREEN_EDGE_ALPHA_DIST := 75.0
 const textures = [preload("res://world/features/column/assets/column_short.png"),
 	preload("res://world/features/column/assets/column_tall.png")]
-const TALL_HEIGHT = 172
+const TALL_HEIGHT = 176
 var obstructs := false
 
 

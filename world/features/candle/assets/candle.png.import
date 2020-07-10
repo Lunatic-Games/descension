@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/column_mid.png-b42691122783b8707c57ae190e99ae16.stex"
+path="res://.import/candle.png-927d01f8d75b7dac1b80c3b7ec4f4bad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/features/column/assets/column_mid.png"
-dest_files=[ "res://.import/column_mid.png-b42691122783b8707c57ae190e99ae16.stex" ]
+source_file="res://world/features/candle/assets/candle.png"
+dest_files=[ "res://.import/candle.png-927d01f8d75b7dac1b80c3b7ec4f4bad.stex" ]
 
 [params]
 

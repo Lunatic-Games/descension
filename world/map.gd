@@ -4,7 +4,7 @@ extends YSort
 var astar := AStar2D.new()
 var tiles := {}  # Dictionary with tile_id : tile
 var queued_tile_hover: Tile  # For hovers while player is travelling
-
+var disable_physics = false
 onready var player := $Brawler
 
 
@@ -20,6 +20,12 @@ func _ready():
 	# warning-ignore:return_value_discarded
 	player.connect("reached_destination", self, "player_done_move")
 	player.setup($GroundTiles/BaseTile5)
+	var _err = get_tree().connect("physics_frame", self, "disable_startup_physics")
+
+
+func disable_startup_physics():
+	yield(get_tree(), "physics_frame")
+	get_tree().set_group("startup_physics", "disabled", true)
 
 
 # Check if a queued path needs to be displayed
