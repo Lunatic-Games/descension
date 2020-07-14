@@ -4,8 +4,15 @@ extends Node2D
 const MIN_ALPHA := 0.12
 const MOUSE_ALPHA_DIST := 300.0
 const SCREEN_EDGE_ALPHA_DIST := 75.0
-
+const textures = [preload("res://world/features/column/assets/column_short.png"),
+	preload("res://world/features/column/assets/column_tall.png")]
+const TALL_HEIGHT = 176
 var obstructs := false
+
+
+func _ready():
+	$Sprite.texture = textures[randi() % len(textures)]
+	$Sprite.position.y += (TALL_HEIGHT - $Sprite.texture.get_height()) / 2
 
 
 # Check if alpha needs to be updated
@@ -18,7 +25,7 @@ func _physics_process(_delta):
 
 # Check if obstructing something in group 'visible_area'
 func _on_ObstructionArea_area_entered(area: Area2D):
-	if area.is_in_group("visible_area"):
+	if area.is_in_group("piercing_view"):
 		$ObstructionArea/CollisionPolygon2D.set_deferred("disabled", true)
 		obstructs = true
 

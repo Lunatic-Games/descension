@@ -3,16 +3,36 @@ extends YSort
 
 var astar := AStar2D.new()
 var tiles := {}  # Dictionary with tile_id : tile
-onready var player_tile := $GroundTiles/BaseTile24
+var queued_tile_hover: Tile  # For hovers while player is travelling
+var disable_physics = false
+onready var player := $Brawler
 
 
-# Setup astar and signals
+# Setup astar, signals and player
 func _ready():
 	add_tiles_to_astar()
 	connect_astar_nodes()
 	
 	for tile in $GroundTiles.get_children():
 		tile.connect("hovered", self, "show_path")
+		tile.connect("pressed", self, "follow_path")
+	
+	# warning-ignore:return_value_discarded
+	player.connect("reached_destination", self, "player_done_move")
+	player.setup($GroundTiles/BaseTile5)
+	var _err = get_tree().connect("physics_frame", self, "disable_startup_physics")
+
+
+func disable_startup_physics():
+	yield(get_tree(), "physics_frame")
+	get_tree().set_group("startup_physics", "disabled", true)
+
+
+# Check if a queued path needs to be displayed
+func player_done_move():
+	if queued_tile_hover:
+		show_path(queued_tile_hover)
+		queued_tile_hover = null
 
 
 # Add all children of GroundTiles to the astar graph
@@ -46,20 +66,29 @@ func connect_astar_nodes():
 
 
 # Show a path from player tile to given tile
-func show_path(tile_to):
-	var path: Array = astar.get_id_path(player_tile.id, tile_to.id)
+func show_path(tile_to: Tile):
+	if !player.standing_tile:
+		queued_tile_hover = tile_to
+		return
+	
+	var path: Array = astar.get_id_path(player.standing_tile.id, tile_to.id)
+	if path and path.size() > 1:
+		tile_to.reachable()
+		player.update_path_direction(tiles[path[1]])
+	else:
+		tile_to.unreachable()
+		
 	var all_tile_ids: Array = tiles.keys()
 	
 	path.pop_front()
 	for i in all_tile_ids.size():
 		var id: int = all_tile_ids[i]
 		var tile: Tile = tiles[id]
-		if path:
-			tile.path_origin_tile = tiles[path[0]]
-		tile.get_node("AnimationPlayer").stop()
+		tile.stop_path_animation()
 		if path.has(id):
-			tile.get_node("WalkCircle").visible = true
-			tile.get_node("WalkCircle").scale = Vector2(0.5, 0.5)
+			tile.path_origin_tile = tiles[path[0]]
+			tile.get_node("PathCircle").visible = true
+			tile.get_node("PathCircle").scale = Vector2(0.5, 0.5)
 			if id == path[0]:
 				tile.begin_path_popup()
 			if id == path[-1]:
@@ -68,5 +97,20 @@ func show_path(tile_to):
 				tile.next_path_tile = tiles[path[path.find(id) + 1]]
 		else:
 			tile.next_path_tile = null
-			tile.get_node("WalkCircle").scale = Vector2(0.5, 0.5)
-			tile.get_node("WalkCircle").visible = false
+			tile.get_node("PathCircle").scale = Vector2(0.5, 0.5)
+			tile.get_node("PathCircle").visible = false
+
+
+func follow_path(tile_to: Tile):
+	if !player.standing_tile:
+		return
+	
+	var path: Array = astar.get_id_path(player.standing_tile.id, tile_to.id)
+	if !path or path.size() <= 1:
+		return
+	get_tree().set_group("tile_button", "disabled", true)
+	tile_to.set_disabled_texture(false)
+	var tile_path := []
+	for id in path:
+		tile_path.append(tiles[id])
+	player.follow_path(tile_path)

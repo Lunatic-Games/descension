@@ -1,35 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://world/features/column/column.gd" type="Script" id=1]
-[ext_resource path="res://world/features/column/assets/column.png" type="Texture" id=2]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-uniform float dist_to_screen_border;
-
-const float FULL_TRANSPARENT_DISTANCE = 300.0;
-
-void fragment() {
-	vec4 color = texture(TEXTURE, UV);
-	if (color.a == 0.0) {
-		COLOR = vec4(color.r, color.g, color.b, 0.0);
-		return;
-	}
-	
-	if (dist_to_screen_border > FULL_TRANSPARENT_DISTANCE) {
-		COLOR = vec4(color.r, color.g, color.b, 0.10);
-	} else if (dist_to_screen_border <= 0.0) {
-		COLOR = vec4(color.r, color.g, color.b, 1.0);
-	} else {
-		float a = (dist_to_screen_border / FULL_TRANSPARENT_DISTANCE) * 0.90 + 0.10;
-		COLOR = vec4(color.r, color.g, color.b, 1.0 - a);
-	}
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/dist_to_screen_border = 0.0
+[ext_resource path="res://world/features/column/assets/column_short.png" type="Texture" id=3]
 
 [node name="Column" type="Node2D"]
 light_mask = 0
@@ -37,17 +9,19 @@ position = Vector2( 520, 320 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-light_mask = 4
-material = SubResource( 2 )
-position = Vector2( 0, -52 )
-texture = ExtResource( 2 )
+light_mask = 0
+position = Vector2( 0, -29 )
+texture = ExtResource( 3 )
 
 [node name="ObscurePosition" type="Position2D" parent="."]
-position = Vector2( 0, -103 )
+position = Vector2( 0, -67 )
 
 [node name="ObstructionArea" type="Area2D" parent="."]
 visible = false
+position = Vector2( 0, 32 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ObstructionArea"]
-polygon = PoolVector2Array( -24, -107, -1, -123, 24, -108, 24, -48, 0, -40, -24, -48 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ObstructionArea" groups=[
+"startup_physics",
+]]
+polygon = PoolVector2Array( -24, -107, 0, -120, 24, -108, 24, -48, 0, -40, -24, -48 )
 [connection signal="area_entered" from="ObstructionArea" to="." method="_on_ObstructionArea_area_entered"]
