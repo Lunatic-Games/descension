@@ -7,7 +7,7 @@
 [ext_resource path="res://souls/brawler/brawler.tscn" type="PackedScene" id=5]
 [ext_resource path="res://world/map.gd" type="Script" id=6]
 [ext_resource path="res://world/features/candle/candle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://world/fps_label.gd" type="Script" id=8]
+[ext_resource path="res://hud/hud.tscn" type="PackedScene" id=8]
 
 [node name="Dungeon" type="Node2D"]
 
@@ -659,15 +659,4 @@ script = ExtResource( 2 )
 [node name="Darkness" type="CanvasModulate" parent="."]
 color = Color( 0.364706, 0.364706, 0.364706, 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="FPSLabel" type="Label" parent="CanvasLayer"]
-margin_left = 14.0
-margin_top = 13.0
-margin_right = 54.0
-margin_bottom = 27.0
-text = "FPS: "
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HUD" parent="." instance=ExtResource( 8 )]

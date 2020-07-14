@@ -42,7 +42,7 @@ func set_obstruction_alpha():
 	if distances[0] < SCREEN_EDGE_ALPHA_DIST and mouse_dist > MOUSE_ALPHA_DIST:
 		modulate.a = 1.0
 	else:
-		var screen_edge_ratio = (distances[0] - SCREEN_EDGE_ALPHA_DIST) / 150.0
+		var screen_edge_ratio: float = (distances[0] - SCREEN_EDGE_ALPHA_DIST) / 150.0
 		screen_edge_ratio = max(1 - screen_edge_ratio, MIN_ALPHA)
-		var mouse_ratio = max(pow(mouse_dist / MOUSE_ALPHA_DIST, 2), MIN_ALPHA)
+		var mouse_ratio: float = max(pow(mouse_dist / MOUSE_ALPHA_DIST, 2), MIN_ALPHA)
 		modulate.a = min(screen_edge_ratio, mouse_ratio)

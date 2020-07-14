@@ -4,9 +4,9 @@ extends Camera2D
 const PAN_SPEED = 250
 const PAN_V_MARGIN = 75
 const PAN_H_MARGIN = 100
-const ZOOM_LEVELS = [1]
+const ZOOM_LEVELS = [0.5, 1]
 
-var zoom_index: int = 0
+var zoom_index: int = 1
 
 
 # Set zoom level to default
@@ -44,10 +44,10 @@ func _physics_process(delta: float):
 	position.x = (position.x + movement.x)
 	position.y = (position.y + movement.y)
 	
-	var mouse_update = InputEventMouseMotion.new()
+	var mouse_update := InputEventMouseMotion.new()
 	mouse_update.device = 0
-	var scaled_pos = mouse_pos * get_viewport().size / get_viewport_rect().size
-	var offset = (OS.window_size - get_viewport().size) / 2
+	var scaled_pos := mouse_pos * get_viewport().size / get_viewport_rect().size
+	var offset := (OS.window_size - get_viewport().size) / 2
 	mouse_update.position = scaled_pos + offset
 	get_tree().input_event(mouse_update)
 

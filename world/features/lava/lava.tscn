@@ -243,6 +243,7 @@ scale_curve = SubResource( 12 )
 color_ramp = SubResource( 10 )
 
 [node name="Lava" type="Node2D"]
+position = Vector2( 298, 142 )
 script = ExtResource( 3 )
 
 [node name="GapFillingSprite" type="Sprite" parent="."]
@@ -265,7 +266,7 @@ region_rect = Rect2( 0, 0, 64, 64 )
 [node name="NorthEast" type="Area2D" parent="Borders" groups=[
 "lava_border",
 ]]
-position = Vector2( 16, 13 )
+position = Vector2( 16, 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/NorthEast" groups=[
 "startup_physics",
@@ -276,19 +277,25 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="Borders/NorthEast"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 32, 254, 32, 16 )
+region_rect = Rect2( 32, 256, 32, 18 )
 
 [node name="ExtraBorder" type="Sprite" parent="Borders/NorthEast"]
 visible = false
-position = Vector2( 15, 7 )
+position = Vector2( 16, 10 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 32, 254, 2, 2 )
+region_rect = Rect2( 30, 258, 4, 2 )
+
+[node name="ExtraBorder2" type="Sprite" parent="Borders/NorthEast"]
+position = Vector2( -16, -6 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 30, 258, 4, 2 )
 
 [node name="NorthWest" type="Area2D" parent="Borders" groups=[
 "lava_border",
 ]]
-position = Vector2( -16, 12 )
+position = Vector2( -16, 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/NorthWest" groups=[
 "startup_physics",
@@ -297,22 +304,29 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Borders/NorthWest"]
-position = Vector2( 0, 1 )
+position = Vector2( 0, 0.999999 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 254, 32, 16 )
+region_rect = Rect2( 0, 258, 32, 16 )
 
 [node name="ExtraBorder" type="Sprite" parent="Borders/NorthWest"]
 visible = false
-position = Vector2( -15, 8 )
+position = Vector2( -16, 10 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 32, 254, 2, 2 )
+region_rect = Rect2( 30, 258, 4, 2 )
+
+[node name="ExtraBorder2" type="Sprite" parent="Borders/NorthWest"]
+visible = false
+position = Vector2( 16, -6 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 30, 258, 4, 2 )
 
 [node name="East" type="Area2D" parent="Borders" groups=[
 "lava_border",
 ]]
-position = Vector2( 33, 37 )
+position = Vector2( 31, 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/East" groups=[
 "startup_physics",
@@ -321,15 +335,29 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Borders/East"]
-position = Vector2( -2, 0 )
+position = Vector2( -2, 2 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 62, 270, 2, 32 )
+region_rect = Rect2( 60, 274, 2, 32 )
+
+[node name="ExtraBorder" type="Sprite" parent="Borders/East"]
+visible = false
+position = Vector2( -2, 17 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 124, 302, 2, 2 )
+
+[node name="ExtraBorder2" type="Sprite" parent="Borders/East"]
+visible = false
+position = Vector2( -1, -16 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 8, 268, 4, 4 )
 
 [node name="West" type="Area2D" parent="Borders" groups=[
 "lava_border",
 ]]
-position = Vector2( -33, 37 )
+position = Vector2( -31, 37 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/West" groups=[
 "startup_physics",
@@ -341,7 +369,21 @@ shape = SubResource( 1 )
 position = Vector2( 2, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 270, 2, 32 )
+region_rect = Rect2( 2, 274, 2, 32 )
+
+[node name="ExtraBorder" type="Sprite" parent="Borders/West"]
+visible = false
+position = Vector2( 2, 15 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 66, 302, 2, 6 )
+
+[node name="ExtraBorder2" type="Sprite" parent="Borders/West"]
+visible = false
+position = Vector2( 0, -17 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 66, 302, 2, 2 )
 
 [node name="SouthEast" type="Area2D" parent="Borders" groups=[
 "lava_border",
@@ -383,6 +425,7 @@ texture_scale = 7.0
 energy = 1.1
 
 [node name="ShadowLight" parent="Light" index="1"]
+position = Vector2( 0, 2 )
 texture_scale = 4.5
 energy = 1.45
 
@@ -413,5 +456,7 @@ texture = ExtResource( 4 )
 [connection signal="area_entered" from="Borders/NorthWest" to="." method="_on_border_area_entered" binds= [ "north_west" ]]
 [connection signal="area_entered" from="Borders/East" to="." method="_on_border_area_entered" binds= [ "east" ]]
 [connection signal="area_entered" from="Borders/West" to="." method="_on_border_area_entered" binds= [ "west" ]]
+[connection signal="area_entered" from="Borders/SouthEast" to="." method="_on_border_area_entered" binds= [ "south_east" ]]
+[connection signal="area_entered" from="Borders/SouthWest" to="." method="_on_border_area_entered" binds= [ "south_west" ]]
 
 [editable path="Light"]

@@ -20,7 +20,8 @@ func _ready():
 	# warning-ignore:return_value_discarded
 	player.connect("reached_destination", self, "player_done_move")
 	player.setup($GroundTiles/BaseTile5)
-	var _err = get_tree().connect("physics_frame", self, "disable_startup_physics")
+	var _err = get_tree().connect("physics_frame", self, "disable_startup_physics",
+		[], CONNECT_ONESHOT)
 
 
 func disable_startup_physics():

@@ -1,14 +1,42 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://world/features/candle/assets/candle.png" type="Texture" id=1]
 [ext_resource path="res://world/light/light.tscn" type="PackedScene" id=2]
+[ext_resource path="res://world/features/candle/candle.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "glow"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light/NormaLight:texture_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 7.0, 8.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 64, 0, 64, 64 ), Rect2( 0, 0, 64, 64 ), Rect2( 64, 0, 64, 64 ), Rect2( 0, 0, 64, 64 ), Rect2( 64, 0, 64, 64 ), Rect2( 0, 0, 64, 64 ), Rect2( 64, 0, 64, 64 ), Rect2( 0, 0, 64, 64 ) ]
+}
 
 [node name="Candle" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Light" parent="." instance=ExtResource( 2 )]
-
-[node name="NormaLight" parent="Light" index="0"]
-texture_scale = 7.0
 
 [node name="ShadowLight" parent="Light" index="1"]
 texture_scale = 5.01
@@ -17,5 +45,11 @@ energy = 0.9
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1, -15 )
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "glow"
+anims/glow = SubResource( 1 )
 
 [editable path="Light"]

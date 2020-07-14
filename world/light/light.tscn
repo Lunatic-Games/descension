@@ -11,6 +11,7 @@ energy = 0.9
 mode = 2
 
 [node name="ShadowLight" type="Light2D" parent="."]
+enabled = false
 texture = ExtResource( 1 )
 texture_scale = 7.0
 mode = 2
