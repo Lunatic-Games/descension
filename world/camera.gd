@@ -41,8 +41,8 @@ func _physics_process(delta: float):
 	if Input.is_action_pressed("camera_left") or mouse_pos.x < PAN_H_MARGIN:
 		movement.x -= 1
 	movement *= PAN_SPEED * ZOOM_LEVELS[zoom_index] * delta
-	#position.x = (position.x + movement.x)
-	#position.y = (position.y + movement.y)
+	position.x = (position.x + movement.x)
+	position.y = (position.y + movement.y)
 	
 	var mouse_update = InputEventMouseMotion.new()
 	mouse_update.device = 0
